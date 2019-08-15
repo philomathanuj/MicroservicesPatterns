@@ -1,0 +1,16 @@
+1. Use the following command which will generate the pair of public/private key. If you just specify a random file name without location, it will create the pair of
+keys in the current directory, and if you add the public key to github settings then you can start pushing your code.
+ssh-keygen
+2 . If you want to give the location of identity file. Follow through this process:
+Start the SSH Agent in the background process:
+eval $(ssh-agent -s)
+3. add the location of the identity file
+ssh-agent ssh-add "/c/Users/Anuj Sharma/.ssh/id_rsa"
+4. verify with handshake which ssh key is getting used.
+ssh -vvv git@github.com
+5. git init (creates an empty repo in your local)
+6. git add --all (add all files for local staging)
+7. git commit -m "" (commit all the files)
+8. git set remote url <remote-repo-git-url>
+9. git push -u origin master (pushes the code to remote repo)
+
